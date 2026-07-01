@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欧服 LOL 群友数据统计 - LOL EUW Server Survey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <header>
+        <a href="index.html" class="logo">LOL EUW✨</a>
+        <nav class="nav-links">
+            <a href="index.html" class="active">填写资料</a>
+            <a href="dashboard.html">查看看板</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="glass-card">
+            <div class="text-center">
+                <h1>欧服 LOL 群友资料录入</h1>
+                <p class="subtitle">花一分钟填写，方便大家开黑组排找队友 🎮</p>
+            </div>
+
+            <form id="surveyForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="wechatId">微信 ID (WeChat ID - 对外脱敏不公开)</label>
+                        <input type="text" id="wechatId" name="wechatId" required placeholder="你的微信微信号 (用于拉群/私聊)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nickname">微信昵称/群名片 (WeChat Nickname)</label>
+                        <input type="text" id="nickname" name="nickname" required placeholder="你在微信群的昵称">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gameId">游戏 ID (Riot ID - 唯一标识 - 对外脱敏不公开)</label>
+                        <input type="text" id="gameId" name="gameId" required placeholder="例如: 劫#EUW">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">电子邮箱 (Email - 唯一标识/后续联络 - 对外脱敏不公开)</label>
+                        <input type="email" id="email" name="email" required placeholder="你的常用邮箱，如: yourname@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">年龄 (Age)</label>
+                        <input type="number" id="age" name="age" required placeholder="如: 22" min="10" max="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender-m">性别 (Gender)</label>
+                        <div class="radio-group">
+                            <input type="radio" id="gender-m" name="gender" value="Male" required>
+                            <label class="radio-label" for="gender-m">男生 🙋‍♂️</label>
+                            
+                            <input type="radio" id="gender-f" name="gender" value="Female">
+                            <label class="radio-label" for="gender-f">女生 🙋‍♀️</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="region">所在国家/地区 (Country/Region)</label>
+                        <select id="region" name="region" required>
+                            <option value="" disabled selected>选择国家/地区</option>
+                            <option value="英国">英国 (UK)</option>
+                            <option value="法国">法国 (France)</option>
+                            <option value="德国">德国 (Germany)</option>
+                            <option value="西班牙">西班牙 (Spain)</option>
+                            <option value="意大利">意大利 (Italy)</option>
+                            <option value="荷兰">荷兰 (Netherlands)</option>
+                            <option value="爱尔兰">爱尔兰 (Ireland)</option>
+                            <option value="瑞士">瑞士 (Switzerland)</option>
+                            <option value="瑞典">瑞典 (Sweden)</option>
+                            <option value="中国">中国/国内 (China)</option>
+                            <option value="其他">其他 (Other)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="playYears">LOL 游玩时长 (LOL Play Years)</label>
+                        <select id="playYears" name="playYears" required>
+                            <option value="" disabled selected>请选择</option>
+                            <option value="< 1 year">不到 1 年 (新手入坑)</option>
+                            <option value="1-3 years">1 - 3 年</option>
+                            <option value="3-5 years">3 - 5 年</option>
+                            <option value="5-10 years">5 - 10 年</option>
+                            <option value="> 10 years">10 年以上 (老司机)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rank">游戏段位 (Game Rank)</label>
+                        <select id="rank" name="rank" required>
+                            <option value="" disabled selected>请选择段位</option>
+                            <option value="Iron">坚韧黑铁 🪨</option>
+                            <option value="Bronze">英勇黄铜 🥉</option>
+                            <option value="Silver">不屈白银 🥈</option>
+                            <option value="Gold">荣耀黄金 🥇</option>
+                            <option value="Platinum">华贵铂金 💠</option>
+                            <option value="Emerald">流光翡翠 🟢</option>
+                            <option value="Diamond">璀璨钻石 💎</option>
+                            <option value="Master">超凡大师 🟣</option>
+                            <option value="Grandmaster">傲世宗师 🔴</option>
+                            <option value="Challenger">最强王者 👑</option>
+                            <option value="Unranked">无段位/只玩大乱斗 🍿</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>擅长位置 (Preferred Position - 可多选)</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="pos-top" name="position" value="Top">
+                            <label class="checkbox-label" for="pos-top">上单 🛡️</label>
+                            
+                            <input type="checkbox" id="pos-jungle" name="position" value="Jungle">
+                            <label class="checkbox-label" for="pos-jungle">打野 ⚔️</label>
+
+                            <input type="checkbox" id="pos-mid" name="position" value="Mid">
+                            <label class="checkbox-label" for="pos-mid">中单 🔮</label>
+
+                            <input type="checkbox" id="pos-adc" name="position" value="ADC">
+                            <label class="checkbox-label" for="pos-adc">射手 🏹</label>
+
+                            <input type="checkbox" id="pos-support" name="position" value="Support">
+                            <label class="checkbox-label" for="pos-support">辅助 ➕</label>
+
+                            <input type="checkbox" id="pos-fill" name="position" value="Fill">
+                            <label class="checkbox-label" for="pos-fill">补位 🔄</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>常用活跃时段 (Active Time - 起止时间)</label>
+                        <div class="time-picker-group" style="display: flex; align-items: center; gap: 0.8rem;">
+                            <input type="time" id="timeStart" name="timeStart" required style="flex: 1;">
+                            <span style="color: var(--text-muted); font-weight: 600;">至</span>
+                            <input type="time" id="timeEnd" name="timeEnd" required style="flex: 1;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>游戏偏好 (Game Preference - 可多选)</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="playStyle-casual" name="playStyle" value="匹配/大乱斗">
+                            <label class="checkbox-label" for="playStyle-casual">大乱斗/娱乐 🍿</label>
+                            
+                            <input type="checkbox" id="playStyle-ranked" name="playStyle" value="排位上分">
+                            <label class="checkbox-label" for="playStyle-ranked">单双排上分 🏆</label>
+                            
+                            <input type="checkbox" id="playStyle-flex" name="playStyle" value="组排/杯赛">
+                            <label class="checkbox-label" for="playStyle-flex">灵活组排/杯赛 🤝</label>
+
+                            <input type="checkbox" id="playStyle-custom" name="playStyle" value="内战娱乐">
+                            <label class="checkbox-label" for="playStyle-custom">内战/自定义 ⚔️</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="voiceChat-yes">开黑语音连麦 (Voice Chat)</label>
+                        <div class="radio-group">
+                            <input type="radio" id="voiceChat-yes" name="voiceChat" value="可以开麦" required>
+                            <label class="radio-label" for="voiceChat-yes">可以开麦 🎙️</label>
+                            
+                            <input type="radio" id="voiceChat-listen" name="voiceChat" value="仅收听">
+                            <label class="radio-label" for="voiceChat-listen">仅听不说话 🎧</label>
+                            
+                            <input type="radio" id="voiceChat-no" name="voiceChat" value="不方便连麦">
+                            <label class="radio-label" for="voiceChat-no">不方便连麦 🔇</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>常用/本命英雄 (Favorite Champions - 点击选择)</label>
+                        <div class="champion-selector">
+                            <div class="champ-tabs" id="champTabs">
+                                <div class="champ-tab active" data-role="All">全部</div>
+                                <div class="champ-tab" data-role="Top">上单</div>
+                                <div class="champ-tab" data-role="Jungle">打野</div>
+                                <div class="champ-tab" data-role="Mid">中单</div>
+                                <div class="champ-tab" data-role="ADC">下路</div>
+                                <div class="champ-tab" data-role="Support">辅助</div>
+                            </div>
+                            <div class="champ-filters" style="padding: 1rem 1.5rem 0 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                    <input type="text" id="champSearch" class="champ-search-input" placeholder="🔍 搜索英雄 (中/英文)..." style="flex: 1; height: 40px;">
+                                    <button type="button" id="clearChampFilters" class="btn-secondary" style="height: 40px; padding: 0 1rem; border-color: rgba(255,255,255,0.2); white-space: nowrap;">清除过滤</button>
+                                </div>
+                                <div class="az-filter" id="azFilter" style="display: flex; flex-wrap: wrap; gap: 0.3rem; font-size: 0.85rem;">
+                                    <!-- A-Z letters will be generated by JS -->
+                                </div>
+                            </div>
+                            <div class="champ-list-container" id="champListContainer">
+                                <!-- JS will populate champion tags here -->
+                            </div>
+                            <div class="selected-champs-preview" id="selectedChampsPreview">
+                                <span class="preview-placeholder">尚未选择英雄，请在上方点击选择</span>
+                            </div>
+                        </div>
+                        <!-- Hidden input to store actual data for form submission -->
+                        <input type="hidden" id="favoriteChampions" name="favoriteChampions" value="">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">提交群友资料</button>
+            </form>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem 1rem; color: var(--text-muted); font-size: 0.85rem; opacity: 0.8; max-width: 800px; margin: 0 auto;">
+        <p>提交本群友问卷即表示您知晓并同意我们的 <a href="#" style="color: #818cf8; text-decoration: underline;">隐私政策</a> 与 <a href="#" style="color: #818cf8; text-decoration: underline;">使用条款</a>。</p>
+        <p style="margin-top: 0.6rem; font-size: 0.8rem; line-height: 1.5;"><strong>免责声明：</strong>您在此填写的游戏昵称、段位等数据仅供本群内（EUW 欧服）组队开黑、举办内战娱乐赛等统计参考使用。管理员承诺绝不将您的信息用于任何商业盈利用途，且绝不向外部第三方组织共享。</p>
+    </footer>
+    <div id="toast">✅ 提交成功！跳转到看板...</div>
+
+    <script src="js/champions.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
