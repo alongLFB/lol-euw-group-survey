@@ -183,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { key: 'rank', name: '游戏段位' },
                 { key: 'position', name: '擅长位置' },
                 { key: 'playStyle', name: '游戏偏好' },
+                { key: 'voiceChat', name: '开黑语音连麦' },
                 { key: 'favoriteChampions', name: '本命英雄' }
             ];
 
@@ -191,6 +192,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     showToast(`❌ 请填写或选择【${field.name}】！`, true);
                     return;
                 }
+            }
+
+            // 格式规范验证
+            if (!data.gameId.includes('#')) {
+                showToast(`❌ 【游戏 ID】格式不规范，必须包含 '#' 符号 (如 劫#EUW)！`, true);
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                showToast(`❌ 【电子邮箱】格式不正确！`, true);
+                return;
+            }
+
+            const ageNum = parseInt(data.age, 10);
+            if (isNaN(ageNum) || ageNum < 10 || ageNum > 100) {
+                showToast(`❌ 【年龄】请输入 10 到 100 之间的有效数字！`, true);
+                return;
             }
 
             const timeStart = formData.get('timeStart');
